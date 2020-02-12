@@ -1,6 +1,6 @@
 {
   "name": "@tconnect/secrets2env",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Creates env varaibles file from AWS secrets",
   "main": "index.js",
   "directories": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/TourConnect/secrets2env/issues"
   },
-  "homepage": "https://github.com/TourConnect/secrets2env#readme"
+  "homepage": "https://github.com/TourConnect/secrets2env#readme",
+  "bin": {
+    "secrets2env": "./index.js"
+  }
 }

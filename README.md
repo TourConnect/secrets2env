@@ -12,7 +12,7 @@ npm install --save @tconnect/secrets2env
 ### run with it the on a project
 
 ```
-./node_modules/.bin/loadSecrets && node someScript.js
+./node_modules/.bin/secrets2env && node index.js
 ```
 
 ## expected env variables
