@@ -1,12 +1,10 @@
-#!/usr/bin/env node
-
 const AWS = require('aws-sdk');
 const path = require('path');
 const fs = require('fs');
 
 const { env: {
   region = 'us-east-1',
-  secretName = 'staging/frontend',
+  secretName: SecretId = 'secrets2env/test',
   accessKeyId,
   secretAccessKey,
 }} = process;
@@ -20,21 +18,17 @@ if (accessKeyId && secretAccessKey) {
 const client = new AWS.SecretsManager({
     region
 });
-
-client.getSecretValue({SecretId: secretName}, function(err, data) {
-  if (err) {
-      console.log('unable to retrieve secrets', err.code);
+module.exports = async () => {
+  const data = await client.getSecretValue({ SecretId }).promise();
+  let dotEnvContent = '';
+  if ('SecretString' in data) {
+    Object.entries(JSON.parse(data.SecretString)).forEach(([attribute, value]) => {
+      dotEnvContent += `${attribute}=${value}\n`;
+    });
+    const writePath = __dirname.split('node_modules/')[0]
+    fs.writeFileSync(`${writePath}/.env`, dotEnvContent);
   } else {
-    let dotEnvContent = '';
-    if ('SecretString' in data) {
-      Object.entries(JSON.parse(data.SecretString)).forEach(([attribute, value]) => {
-        dotEnvContent += `${attribute}=${value}\n`;
-      });
-      const writePath = __dirname.split('node_modules/')[0]
-      fs.writeFileSync(`${writePath}/.env`, dotEnvContent);
-    } else {
-      console.log('unable to find env secrets');
-    }
+    throw new Error('unable to find env secrets');
   }
-  process.exit(0);
-});
+  return(JSON.parse(data.SecretString));
+}

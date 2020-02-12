@@ -1,6 +1,6 @@
 {
   "name": "@tconnect/secrets2env",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Creates env varaibles file from AWS secrets",
   "main": "index.js",
   "directories": {
@@ -9,7 +9,9 @@
   "dependencies": {
     "aws-sdk": "^2.616.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +26,6 @@
   },
   "homepage": "https://github.com/TourConnect/secrets2env#readme",
   "bin": {
-    "secrets2env": "./index.js"
+    "secrets2env": "./bin.js"
   }
 }
