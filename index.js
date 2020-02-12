@@ -37,18 +37,4 @@ client.getSecretValue({SecretId: secretName}, function(err, data) {
     }
   }
   process.exit(0);
-  // const args = process.argv.slice();
-  // const indexFound = (() => {
-  //   let retVal = args.findIndex(el => el.indexOf('secrets2env') > -1)
-  //   if (retVal > -1) return retVal;
-  //   return args.findIndex(el => el.indexOf('loadSecrets') > -1)
-  // })();
-  // if (indexFound < args.length - 1) {
-  //   process.argv.splice(indexFound, 1);// gosth the script
-  //   if (args[indexFound].indexOf('node_modules/') > -1) { // we are running it from bin
-  //     require(`${args[indexFound].split('node_modules/')[0]}${args[indexFound + 1]}`);
-  //   } else { // locally run
-  //     require(args[indexFound + 1]);
-  //   }
-  // }
 });
