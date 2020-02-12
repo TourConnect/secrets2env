@@ -1,0 +1,17 @@
+{
+  "name": "secrets2env",
+  "version": "1.0.0",
+  "description": "Creates env varaibles from AWS secrets configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Salvador Aceves",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.616.0"
+  },
+  "bin": {
+    "loadSecrets": "./index.js"
+  }
+}
