@@ -6,7 +6,7 @@ An executable dependency that would retrieve secrets from AWS and set them up as
 ### install the dependency
 
 ```
-npm install --save git://github.com/visionmedia/express.git
+npm install --save git://github.com/tourconnect.com/secrets2env.git
 ```
 
 ### run with it the on a project
