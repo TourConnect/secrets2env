@@ -1,6 +1,6 @@
 {
   "name": "secrets2env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates env varaibles from AWS secrets configuration",
   "main": "index.js",
   "scripts": {
