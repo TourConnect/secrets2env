@@ -6,7 +6,7 @@ An executable dependency that would retrieve secrets from AWS and set them up as
 ### install the dependency
 
 ```
-npm install --save @tourconnect/secrets2envfile
+npm install --save @tconnect/secrets2env
 ```
 
 ### run with it the on a project

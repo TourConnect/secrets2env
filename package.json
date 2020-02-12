@@ -1,0 +1,26 @@
+{
+  "name": "@tconnect/secrets2env",
+  "version": "1.0.2",
+  "description": "Creates env varaibles file from AWS secrets",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.616.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TourConnect/secrets2env.git"
+  },
+  "author": "Salvador Aceves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TourConnect/secrets2env/issues"
+  },
+  "homepage": "https://github.com/TourConnect/secrets2env#readme"
+}
