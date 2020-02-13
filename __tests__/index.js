@@ -18,13 +18,17 @@ async function sh(cmd) {
 // with the value demoValue
 describe('required test', () => {
   it('should be able to required the library', async () => {
-    const retVal = await lib();
+    const retVal = await lib.retrieve();
     expect(retVal.demoSecret).toBe('demoValue');
   });
-  it('should exit', async () => {
+  it('should crate a file', async () => {
     const envFile = `${__dirname}/../.env`;
-    fs.unlinkSync(envFile);
+    if (fs.existsSync(envFile)) fs.unlinkSync(envFile);
     await sh(`${__dirname}/../bin.js`);
     expect(fs.existsSync(envFile)).toBe(true);
+  });
+  it('should create the env variables', async () => {
+    await lib.config();
+    expect(process.env.demoSecret).toBe('demoValue');
   });
 });
