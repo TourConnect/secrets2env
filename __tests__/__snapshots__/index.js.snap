@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`required test should be able to required the library: secretsmanager.getSecretValue (resolve mock cb9324caaf701fa24fc6c30873b72a01d8e93377) 1`] = `
+Array [
+  Object {
+    "SecretId": "secrets2env/test",
+  },
+]
+`;
+
+exports[`required test should create the env variables: secretsmanager.getSecretValue (resolve mock cb9324caaf701fa24fc6c30873b72a01d8e93377) 1`] = `
+Array [
+  Object {
+    "SecretId": "secrets2env/test",
+  },
+]
+`;

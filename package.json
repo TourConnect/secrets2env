@@ -10,10 +10,11 @@
     "aws-sdk": "^2.616.0"
   },
   "devDependencies": {
+    "aws-promise-jest-mock": "^1.1.3",
     "jest": "^25.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest -i"
   },
   "repository": {
     "type": "git",
