@@ -9,10 +9,26 @@ An executable dependency that would retrieve secrets from AWS and set them up as
 npm install --save @tconnect/secrets2env
 ```
 
-### run with it the on a project
+###  create a .env file using the binary execution
 
 ```
 ./node_modules/.bin/secrets2env && node index.js
+```
+
+###  load all vars to process.env for current script
+
+```
+const secrets2env = require('@tourconnect/secrets2env'); 
+
+// 2015 version
+secrets2env.config.then(function() {
+  // all loaded
+});
+  
+// 2019 version
+const main = async () => {
+  await lib.config();
+};
 ```
 
 ## expected env variables
