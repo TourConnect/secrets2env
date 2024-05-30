@@ -1,17 +1,14 @@
 {
   "name": "@tconnect/secrets2env",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Creates env varaibles file from AWS secrets",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
-  "dependencies": {
-    "aws-sdk": "^2.616.0"
-  },
   "devDependencies": {
-    "aws-promise-jest-mock": "^1.1.3",
-    "jest": "^25.1.0"
+    "aws-sdk-client-mock": "^4.0.0",
+    "jest": "^27.3.1"
   },
   "scripts": {
     "test": "jest -i"
@@ -28,5 +25,8 @@
   "homepage": "https://github.com/TourConnect/secrets2env#readme",
   "bin": {
     "secrets2env": "./bin.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-secrets-manager": "^3.583.0"
   }
 }

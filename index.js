@@ -1,26 +1,24 @@
-const AWS = require('aws-sdk');
+const {
+  GetSecretValueCommand,
+  SecretsManagerClient,
+} = require("@aws-sdk/client-secrets-manager");
 const path = require('path');
 const fs = require('fs');
 
 const { env: {
   region = 'us-east-1',
   secretName: SecretId = 'secrets2env/test',
-  accessKeyId,
-  secretAccessKey,
 }} = process;
 
-// Load the AWS SDK with the config
-if (accessKeyId && secretAccessKey) {
-  AWS.config.update({ accessKeyId, secretAccessKey });
-}
-
 // Create a Secrets Manager client
-const client = new AWS.SecretsManager({
-    region
-});
+const client = new SecretsManagerClient({ region });
 
 const retrieve = async () => {
-  const data = await client.getSecretValue({ SecretId }).promise();
+  const data = await client.send(
+    new GetSecretValueCommand({
+      SecretId,
+    }),
+  );
   let dotEnvContent = '';
   return(JSON.parse(data.SecretString));
 }
