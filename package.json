@@ -1,6 +1,6 @@
 {
   "name": "@tconnect/secrets2env",
-  "version": "2.0.0",
+  "version": "2.0.4",
   "description": "Creates env varaibles file from AWS secrets",
   "main": "index.js",
   "directories": {
@@ -27,6 +27,7 @@
     "secrets2env": "./bin.js"
   },
   "dependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.583.0"
+    "@aws-sdk/client-secrets-manager": "^3.583.0",
+    "minimist": "^1.2.8"
   }
 }
